@@ -18,6 +18,11 @@ public class MovingPlatform : MonoBehaviour
 
     void Update()
     {
+        if (!gameOver && !GameManager.Instance.IsGameActive())
+        {
+            gameOver = true;
+        }
+
         if (!gameOver)
         {
             MovePlatform();
@@ -35,9 +40,9 @@ public class MovingPlatform : MonoBehaviour
 
         transform.position = new Vector2(newX, transform.position.y);
 
-        if(Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
@@ -64,5 +69,16 @@ public class MovingPlatform : MonoBehaviour
     public float GetRemainingTime()
     {
         return timer;
+    }
+
+    public void ResetTimer()
+    {
+        timer = timeLimit;
+        gameOver = false;
+    }
+
+    public bool IsTimeUp()
+    {
+        return timer <= 0;
     }
 }
