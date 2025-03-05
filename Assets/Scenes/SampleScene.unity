@@ -1025,6 +1025,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1135309611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1135309613}
+  - component: {fileID: 1135309612}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1135309612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135309611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c58387442c6cb94a83126a8a31b7423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSource: {fileID: 0}
+  sfxSource: {fileID: 0}
+  blockCaughtSuccess: {fileID: 8300000, guid: cfe6ff389a1d73442bf0ae2df3abf7be, type: 3}
+  blockCaughtWrong: {fileID: 8300000, guid: 2d1447dcac080d34b9f09e8b4dd1fe8e, type: 3}
+  blockMissed: {fileID: 8300000, guid: f5897eee09f700f429c229e8f33e45ba, type: 3}
+  levelComplete: {fileID: 8300000, guid: 34f857032f96a2d43b5d7a3a48e0948e, type: 3}
+  gameOver: {fileID: 8300000, guid: 605311ec8c815bd4b86eb8d8cc0da428, type: 3}
+--- !u!4 &1135309613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135309611}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.4587888, y: 2.6419098, z: 10.890381}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1141897128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2244,3 +2295,4 @@ SceneRoots:
   - {fileID: 1022405978}
   - {fileID: 2014017063}
   - {fileID: 338073838}
+  - {fileID: 1135309613}

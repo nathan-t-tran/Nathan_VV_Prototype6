@@ -86,6 +86,12 @@ public class GameManager : MonoBehaviour
 
         if (isNeededBlock)
         {
+            // Play success sound
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlaySuccessSound();
+            }
+
             // Increment the count for this block type
             caughtBlocks[block.type]++;
 
@@ -96,6 +102,12 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            // Play wrong block sound
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlayWrongSound();
+            }
+
             // Penalty for catching wrong block type
             score = Mathf.Max(0, score - 50);
             UpdateScoreDisplay();
@@ -112,6 +124,12 @@ public class GameManager : MonoBehaviour
         // Don't end game when a block is missed, deduct points instead
         if (isGameActive)
         {
+            // Play missed sound
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlayMissedSound();
+            }
+
             // Deduct points but keep score non-negative
             score = Mathf.Max(0, score - 50);
             UpdateScoreDisplay();
@@ -147,6 +165,12 @@ public class GameManager : MonoBehaviour
 
     private void LevelComplete()
     {
+        // Play level complete sound
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlayLevelCompleteSound();
+        }
+
         int levelBonus = 100 * levelManager.GetCurrentLevel();
         score += levelBonus;
         UpdateScoreDisplay();
@@ -169,6 +193,12 @@ public class GameManager : MonoBehaviour
     private void GameOver(string message)
     {
         isGameActive = false;
+
+        // Play game over sound
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlayGameOverSound();
+        }
 
         // Stop block spawning
         FindFirstObjectByType<BlockSpawner>().StopSpawning();
